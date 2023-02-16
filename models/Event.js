@@ -11,7 +11,7 @@ const eventSchema= new mongoose.Schema({
     availableTicketNumber : {type: Number, required: true},
     eventType : {type: String, required: true, },
     location : {type: String, required: true,},
-    tags: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tags'}],
+    tags: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tag'}],
 })
 
 

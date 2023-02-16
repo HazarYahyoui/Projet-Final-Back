@@ -13,8 +13,10 @@ app.use(morgan('dev'));
 
 const company = require('./routes/apiCompany');
 const event = require('./routes/apiEvent');
+const tag = require('./routes/apiTags');
 
 app.use('/api', company);
 app.use('/api', event);
+app.use('/api', tag);
 
 app.listen(3000, () => console.log('listening on port 3000!'));

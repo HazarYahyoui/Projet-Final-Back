@@ -4,7 +4,7 @@ const router = express.Router();
 
 const { getAllEvent, createEvent, getEvent, updateEvent, deleteEvent } = require('../controllers/CrudEvent');
 
-router.get('/', getAllEvent);
+router.get('/AllEvent', getAllEvent);
 router.post('/createEvent', createEvent);
 router.get('/:Id', getEvent);
 router.put('/updateEvent/:Id', updateEvent);

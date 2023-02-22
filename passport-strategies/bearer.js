@@ -12,4 +12,5 @@ passport.use(new BearerStrategy(
         return done(null, user, { scope: 'all' });
       });
     }
+    
   ));

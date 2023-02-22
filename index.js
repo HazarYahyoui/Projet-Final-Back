@@ -10,6 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
+const passport = require('./passport-strategies/bearer')
 
 const company = require('./routes/apiCompany');
 const event = require('./routes/apiEvent');

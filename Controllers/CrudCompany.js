@@ -1,4 +1,6 @@
 const Company = require('../models/Company');
+const bcrypt= require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 exports.getAllCompany = async (req, res) => {
   const companys = await Company.find();
@@ -6,11 +8,17 @@ exports.getAllCompany = async (req, res) => {
 };
 
 exports.createCompany = async (req, res) => {
+    // salt c'est le nombre de fois ou on va crypter le password
+    const salt= await bcrypt.genSalt(10); 
+
+    // hashedPass est le password après cryptage
+    const hashedPass= await bcrypt.hash(req.body.password, salt);  
+
   const company = new Company({
     companyName: req.body.companyName,
     companyDescription: req.body.companyDescription,
     email: req.body.email,
-    password: req.body.password,
+    password: hashedPass,
     role : req.body.role,
     photo : req.body.photo,
     events : req.body.events

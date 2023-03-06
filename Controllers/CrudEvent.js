@@ -12,9 +12,9 @@ exports.createEvent = async (req, res) => {
     startDateTime: req.body.startDateTime,
     endDateTime: req.body.endDateTime,
     photo : req.body.photo,
-    price : req.body.price,
-    availableTicketNumber : req.body.availableTicketNumber,
+    ticketNumber : req.body.ticketNumber,
     eventType : req.body.eventType,
+    price : req.body.price,
     location : req.body. location,
     tags : req.body.tags,
   });

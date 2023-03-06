@@ -4,7 +4,7 @@ const router = express.Router();
 
 const { getAllTag, createTag, getTag, updateTag, deleteTag } = require('../controllers/CrudTags');
 
-router.get('/AllTag', getAllTag);
+router.get('/tag', getAllTag);
 router.post('/createTag', createTag);
 router.get('/:Id', getTag);
 router.put('/updateTag/:Id', updateTag);

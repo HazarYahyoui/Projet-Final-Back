@@ -3,6 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require('./database/connect');
 mongoose.set('strictQuery', true);
+const port = 3000;
 
 
 
@@ -19,11 +20,11 @@ const auth = require('./routes/apiAuth');
 const forgotP = require('./routes/apiForgotPass');
 const resetP = require('./routes/apiResetPass');
 
-app.use('/api', company);
-app.use('/api', event);
-app.use('/api', tag);
-app.use('/api', auth);
-app.use('/api', forgotP);
-app.use('/api', resetP);
+app.use('', company);
+app.use('', event);
+app.use('', tag);
+app.use('', auth);
+app.use('', forgotP);
+app.use('', resetP);
 
-app.listen(3000, () => console.log('listening on port 3000!'));
+app.listen(port, () => console.log(`listening at http://localhost:${port}`));

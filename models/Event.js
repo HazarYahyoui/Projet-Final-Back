@@ -8,7 +8,7 @@ const eventSchema= new mongoose.Schema({
     endDateTime : {type: Date, required: true},
     photo : {type: String, required: true},
     price : {type: String, required: true},
-    availableTicketNumber : {type: Number, required: true},
+    ticketNumber : {type: Number, required: true},
     eventType : {type: String, required: true, },
     location : {type: String, required: true,},
     tags: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tag'}],

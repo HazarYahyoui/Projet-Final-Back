@@ -3,7 +3,9 @@ const bcrypt= require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 exports.register= async (req, res)=>{
-    // test si l’email de l‘utilisateur existe déjà ou non
+   
+    try {
+      // test si l’email de l‘utilisateur existe déjà ou non
     const exist= await Authentification.findOne({email: req.body.email});
     if (exist){
         return res.send({message: 'Email already used '});
@@ -19,12 +21,15 @@ exports.register= async (req, res)=>{
         companyDescription: req.body.companyDescription,
         email: req.body.email,
         password: hashedPass,
-        role : req.body.role,
+        // role : req.body.role,
     });
 
     await Authentification.create(authentification);
-    res.send(authentification);
-}};
+    res.send(authentification);   
+    }} catch (error) {
+        res.statuts(500).send({message: error.message})
+    }
+};
 
 exports.login = async(req, res) =>{
     const authentification = await Authentification.findOne({email: req.body.email});

@@ -6,7 +6,7 @@ const { getAllEvent, createEvent, getEvent, updateEvent, deleteEvent } = require
 
 router.get('/AllEvent', getAllEvent);
 router.post('/createEvent', createEvent);
-router.get('/:Id', getEvent);
+router.get('/Event/:Id', getEvent);
 router.put('/updateEvent/:Id', updateEvent);
 router.delete('/deleteEvent/:Id', deleteEvent);
 

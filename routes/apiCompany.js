@@ -6,7 +6,7 @@ const { getAllCompany, createCompany, getCompany, updateCompany, deleteCompany }
 
 router.get('/AllCompany', getAllCompany);
 router.post('/createCompany', createCompany);
-router.get('/:Id', getCompany);
+router.get('/Company/:Id', getCompany);
 router.put('/updateCompany/:Id', updateCompany);
 router.delete('/deleteCompany/:Id', deleteCompany);
 

@@ -9,6 +9,7 @@ const companySchema= new mongoose.Schema({
     role : {type: String,  default:'user'},
     photo : {type: String, default:'../view/photoCompany' },
     events : [{type: mongoose.Schema.Types.ObjectId, ref: 'Event'}],
+    
 })
 
 module.exports = mongoose.model('Company', companySchema);

@@ -1,7 +1,7 @@
 const Event = require('../models/Event');
 
 exports.getAllEvent = async (req, res) => {
-  const events = await Event.find();
+  const events = await Event.find(req.body);
   res.send(events);
 };
 

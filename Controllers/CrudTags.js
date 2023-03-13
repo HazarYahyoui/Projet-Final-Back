@@ -1,8 +1,16 @@
 const Tag = require('../models/Tags');
 
 exports.getAllTag = async (req, res) => {
-  const tags = await Tag.find();
-  res.send(tags);
+  
+  try {
+    const tags = await Tag.find();
+    res.send(tags); 
+  } catch (error) {
+    res.status(500).send({
+      message : error.message
+    })
+  }
+  
 };
 
 exports.createTag = async (req, res) => {
@@ -24,7 +32,7 @@ exports.getTag = async (req, res) => {
 };
 
 exports.updateTag = async (req, res) => {
-  const tag = await Tag.findByIdAndUpdate(req.params.Id);
+  const tag = await Tag.findByIdAndUpdate(req.params.Id, req.body);
 
   res.send(tag);
 };

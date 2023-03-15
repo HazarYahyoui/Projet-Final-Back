@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('./database/connect');
 mongoose.set('strictQuery', true);
 const port = 3000;
+ require('dotenv').config() ;
 
 
 

@@ -51,9 +51,10 @@ exports.login = async (req, res) => {
 
             res.status(400).send({ message: 'login successful', token })
         };
-
     }
+};
 
-
-
+exports.logout = async (req, res) => {
+    req.logout()
+    res.json('You have successfully logged out ')
 };

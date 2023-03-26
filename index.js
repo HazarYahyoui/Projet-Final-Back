@@ -20,6 +20,8 @@ const tag = require('./routes/apiTags');
 const auth = require('./routes/apiAuth');
 const forgotP = require('./routes/apiForgotPass');
 const resetP = require('./routes/apiResetPass');
+const home = require('./routes/apiHome');
+const contact = require('./routes/apiContact');
 
 app.use('', company);
 app.use('', event);
@@ -27,5 +29,7 @@ app.use('', tag);
 app.use('', auth);
 app.use('', forgotP);
 app.use('', resetP);
+app.use('', home);
+app.use('', contact);
 
 app.listen(port, () => console.log(`listening at http://localhost:${port}`));

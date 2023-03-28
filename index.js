@@ -22,6 +22,7 @@ const forgotP = require('./routes/apiForgotPass');
 const resetP = require('./routes/apiResetPass');
 const home = require('./routes/apiHome');
 const contact = require('./routes/apiContact');
+const reservation = require('./routes/apiReservation');
 
 app.use('', company);
 app.use('', event);
@@ -31,5 +32,6 @@ app.use('', forgotP);
 app.use('', resetP);
 app.use('', home);
 app.use('', contact);
+app.use('', reservation);
 
 app.listen(port, () => console.log(`listening at http://localhost:${port}`));
